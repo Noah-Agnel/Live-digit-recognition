@@ -15,6 +15,8 @@ This project implements the classic LeNet-5 neural network architecture by Yann 
 
 -Reimplementation of LeNet-5
 
+-A model.h5 file containing the trained model with 99.37% accuracy
+
 -Real-time digit prediction using a trained model
 
 -Simple and interactive UI for testing your own digits
