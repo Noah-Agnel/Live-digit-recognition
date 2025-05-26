@@ -1,5 +1,6 @@
 # Live Digit Recognition with LeNet-5
 This project implements the classic LeNet-5 neural network architecture by Yann LeCun for handwritten digit recognition using the MNIST dataset.
+
 -Model Accuracy: Achieves 99.37% accuracy on the MNIST test set.
 -Interactive Demo: Includes a PyGame-based interface that lets you draw digits in real time and see live predictions from the model.
 
