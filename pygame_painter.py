@@ -57,8 +57,7 @@ def get_canvas_array(surface):
     return gray.astype(np.float32)
 
 def predict_digit(input_img):
-    prediction = model.predict(input_img)
-    print(prediction)
+    prediction = model.predict(input_img, verbose=0)
     return np.argmax(prediction)
 
 running = True
@@ -95,22 +94,3 @@ while running:
 
     pygame.display.flip()
 pygame.quit()
-
-mnist = tf.keras.datasets.mnist
-(x_train, y_train), (x_test, y_test) = mnist.load_data()
-rows, cols = 28, 28
-
-x_train = x_train.reshape(x_train.shape[0], rows, cols, 1)
-x_test = x_test.reshape(x_test.shape[0], rows, cols, 1)
-
-input_shape = (rows,cols,1) 
-
-x_train = x_train.astype('float32')
-x_test = x_test.astype('float32')
-x_train = x_train / 255.0
-x_test = x_test / 255.0
-
-y_train = tf.keras.utils.to_categorical(y_train, 10)
-y_test = tf.keras.utils.to_categorical(y_test, 10)
-loss ,acc= model.evaluate(x_test, y_test)
-print('Accuracy : ', acc)
