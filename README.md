@@ -5,13 +5,13 @@ This project implements the classic LeNet-5 neural network architecture by Yann 
 
 -Interactive Demo: Includes a PyGame-based interface that lets you draw digits in real time and see live predictions from the model.
 
-How to Run:
+## How to Run:
 
 -Train the model by running: python lenet5.py
 
 -Launch the drawing interface: python pygame_painter.py
 
-Features:
+## Features:
 
 -Reimplementation of LeNet-5
 
