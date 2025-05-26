@@ -6,7 +6,6 @@ from tensorflow.keras.layers import Conv2D
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.layers import Flatten
 from tensorflow.keras.layers import BatchNormalization
-from tensorflow.keras.layers import AveragePooling2D
 from tensorflow.keras.layers import Activation
 from tensorflow.keras.layers import Dropout
 from tensorflow.keras.layers import MaxPooling2D
@@ -84,7 +83,7 @@ model.compile(
     metrics=['accuracy']
 )
 
-# We will be allowing 10 itterations to happen
+# Training for 10 iterations
 epochs = 10
 model.fit(x_train, y_train, epochs=epochs,batch_size=128, verbose=1)
 
@@ -92,15 +91,11 @@ model.fit(x_train, y_train, epochs=epochs,batch_size=128, verbose=1)
 loss ,acc= model.evaluate(x_test, y_test)
 print('Accuracy : ', acc)
 
+#print the shape of the data
 x_train = x_train.reshape(x_train.shape[0], 28,28)
 print('Training Data', x_train.shape, y_train.shape)
 x_test = x_test.reshape(x_test.shape[0], 28,28)
 print('Test Data', x_test.shape, y_test.shape)
 
-# Plot the Image
-image_index = 8888
-plt.imshow(x_test[image_index].reshape(28,28), cmap='Greys')
-# Make Prediction
-pred = model.predict(x_test[image_index].reshape(1, rows, cols, 1 ))
+#save the model
 model.save("model.h5")
-print(pred.argmax())
